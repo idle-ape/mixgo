@@ -1,0 +1,20 @@
+plugin:
+  metrics:
+    endpoint: :8898
+    path: /metrics
+    namespace: mixgo
+    subsystem: test
+    counters:
+      - opts:
+          name: "server_counter"
+          help: "counter for server"
+        labels: ["full_method_name"]
+      - opts:
+          name: "another_counter"
+          help: "test multi counter"
+        labels: ["label1", "label2"]
+    histograms:
+      - opts:
+          name: "server_histogram"
+          help: "histogram for server"
+        labels: ["full_method_name"]
